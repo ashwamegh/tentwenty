@@ -1,0 +1,87 @@
+@tailwind components;
+
+@layer components {
+    /* Header Component */
+    .header-container {
+        @apply absolute w-full top-0 z-10;
+    }
+
+    .header-inner {
+        @apply text-sm leading-snug text-black mt-5 h-[101px] p-[40px] z-10 bg-white flex items-center justify-between relative;
+    }
+
+    /* Logo */
+    .header-logo {
+        @apply text-xl font-bold;
+    }
+
+    /* Desktop Navigation */
+    .header-nav {
+        @apply flex gap-5 items-start;
+    }
+
+    .nav-item {
+        @apply whitespace-nowrap cursor-pointer hover:text-gray-600 transition-colors;
+    }
+
+    .contact-button {
+        @apply whitespace-nowrap border border-black p-4 py-2 hover:bg-black hover:text-white transition-colors;
+    }
+
+    /* Hamburger Menu */
+    .hamburger-menu {
+        @apply flex flex-col justify-center items-center gap-[6px] w-[30px] h-[30px] cursor-pointer z-20;
+    }
+
+    .hamburger-line {
+        @apply w-full h-[2px] bg-black transition-all duration-300;
+    }
+
+    /* Hamburger animation when open */
+    .hamburger-line:nth-child(1).open {
+        @apply transform rotate-45 translate-y-[8px];
+    }
+
+    .hamburger-line:nth-child(2).open {
+        @apply opacity-0;
+    }
+
+    .hamburger-line:nth-child(3).open {
+        @apply transform -rotate-45 -translate-y-[8px];
+    }
+
+    /* Mobile Navigation */
+    .mobile-nav {
+        @apply absolute top-full left-0 w-full bg-white shadow-lg z-10;
+    }
+
+    .mobile-nav-items {
+        @apply flex flex-col p-5 gap-4;
+    }
+
+    .mobile-nav-items .nav-item {
+        @apply py-2 border-b border-gray-100;
+    }
+
+    .mobile-contact {
+        @apply mt-4 self-start;
+    }
+
+    /* Responsive adjustments */
+    @media (min-width: 768px) {
+        .header-inner {
+            @apply mx-12;
+        }
+    }
+
+    /* Mobile view */
+    @media (max-width: 767px) {
+        .header-inner {
+            @apply mx-0 my-0 px-4;
+        }
+        
+        .mobile-header-contact {
+            @apply text-sm py-1 px-3;
+        }
+    }
+}

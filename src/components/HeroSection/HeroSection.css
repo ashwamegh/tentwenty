@@ -1,0 +1,230 @@
+@tailwind components;
+
+@layer components {
+    /* Hero Section Component */
+    .hero-container {
+        @apply w-full h-screen overflow-hidden text-white;
+    }
+
+    .hero-inner {
+        @apply relative w-full h-full;
+    }
+
+    .hero-image-container {
+        @apply absolute w-full h-screen top-0 left-0;
+    }
+
+    .hero-image {
+        @apply absolute w-full h-screen mx-auto left-0 object-cover;
+    }
+
+    .hero-image-container {
+        @apply absolute w-full h-full top-0 left-0 overflow-hidden;
+    }
+
+    .hero-text-container {
+        @apply absolute w-[80%] sm:w-[70%] md:w-[60%] lg:w-[50%] h-auto top-[35%] sm:top-[40%] left-[10%];
+    }
+
+    .hero-heading {
+        @apply absolute w-full top-[3rem] left-0 font-normal text-white text-2xl sm:text-3xl md:text-5xl lg:text-6xl tracking-[0] leading-tight;
+    }
+
+    .hero-welcome {
+        @apply absolute top-0 left-0 font-normal text-white text-base tracking-[0] leading-6 whitespace-nowrap;
+    }
+
+    .hero-controls {
+        @apply absolute w-[40%] sm:w-[35%] md:w-[30%] lg:w-[25%] h-auto top-[75%] left-[10%];
+    }
+
+    .hero-nav-container {
+        @apply absolute w-[8rem] sm:w-[9rem] md:w-[10rem] h-[8rem] sm:h-[9rem] md:h-[10rem] top-0 left-0;
+    }
+
+    .hero-nav-border-container {
+        @apply absolute w-full h-full top-0 left-0 overflow-hidden;
+    }
+
+    .hero-border-top {
+        @apply absolute top-0 left-0 h-[8px] bg-white;
+    }
+
+    .hero-border-right {
+        @apply absolute top-0 right-0 w-[8px] bg-white;
+    }
+
+    .hero-border-bottom {
+        @apply absolute bottom-0 right-0 h-[8px] bg-white;
+        transform: rotate(180deg);
+        transform-origin: center;
+    }
+
+    .hero-border-left {
+        @apply absolute bottom-0 left-0 w-[8px] bg-white;
+        transform: rotate(180deg);
+        transform-origin: center;
+    }
+
+    .hero-nav-next-container {
+        @apply absolute w-2/3 h-2/3 top-[20%] left-[15%];
+    }
+
+    .hero-nav-next-bg {
+        @apply relative w-full h-full bg-[url('./../../assets/images/people-group.png')] bg-[100%_100%];
+    }
+
+    .hero-nav-next-text {
+        @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 font-normal text-white text-base tracking-[0] leading-normal whitespace-nowrap cursor-pointer;
+    }
+
+    .hero-nav-prev-container {
+        @apply absolute w-full h-full top-[2%] left-0;
+    }
+
+    .hero-nav-prev-inner {
+        @apply relative w-full h-full;
+    }
+
+    .hero-nav-prev-bg {
+        @apply absolute w-2/3 h-2/3 top-[15%] left-[15%] bg-[url('./../../assets/images/people-group-1.png')] bg-[100%_100%];
+    }
+
+    .hero-nav-prev-border {
+        @apply absolute w-full h-full top-0 left-0 border border-solid border-white opacity-30;
+    }
+
+    .hero-nav-prev-text {
+        @apply absolute top-[40%] left-[35%] font-normal text-white text-base tracking-[0] leading-normal whitespace-nowrap;
+    }
+
+    .hero-pagination {
+        @apply inline-flex items-center gap-[0.5rem] sm:gap-[0.75rem] md:gap-[1rem] absolute top-[45%] left-[9rem] sm:left-[10rem] md:left-[12rem];
+    }
+
+    .hero-pagination-number {
+        @apply relative w-fit font-normal text-white text-sm sm:text-base tracking-[0] leading-normal whitespace-nowrap;
+    }
+
+    .hero-pagination-line {
+        @apply relative w-[3rem] sm:w-[4rem] md:w-[5rem] lg:w-[6rem] h-px object-cover;
+    }
+
+    /* Animation wrapper styles */
+    .hero-image-wrapper {
+        @apply absolute left-0 right-0 top-1/2 -translate-y-1/2 overflow-hidden flex justify-center items-center;
+    }
+
+    /* Text animation container */
+    .hero-text-animation-container {
+        @apply flex flex-col items-start;
+    }
+
+    /* Heading wrapper */
+    .hero-heading-wrapper {
+        @apply overflow-hidden;
+    }
+
+    /* Heading text rows */
+    .hero-heading-row {
+        @apply flex flex-wrap mb-2;
+    }
+
+    .hero-heading-row-2 {
+        @apply flex flex-wrap;
+    }
+
+    /* Word animation span */
+    .hero-word-span {
+        @apply inline-block mr-3;
+    }
+
+    /* Hero navigation next background */
+    .hero-nav-next-bg {
+        @apply bg-cover bg-center relative;
+    }
+
+    /* Hero navigation overlay */
+    .hero-nav-overlay {
+        @apply absolute top-0 left-0 w-full h-full bg-black bg-opacity-50;
+    }
+
+    /* Mobile specific adjustments */
+    @media (max-width: 768px) {
+        .hero-welcome {
+            @apply text-xs;
+        }
+
+        .hero-nav-next-text,
+        .hero-nav-prev-text {
+            @apply text-sm;
+        }
+
+        .hero-heading {
+            @apply text-[3rem] w-[80%] leading-tight;
+        }
+
+        .hero-border-top,
+        .hero-border-right,
+        .hero-border-bottom,
+        .hero-border-left {
+            @apply h-[5px] w-[5px];
+        }
+    }
+
+    /* Small devices (less than 575px) */
+    @media (max-width: 575px) {
+        .hero-pagination {
+            @apply w-full;
+        }
+
+        .hero-pagination-line {
+            @apply w-[80%];
+        }
+    }
+
+    @media (max-width: 425px) {
+        .hero-welcome {
+            @apply text-xs;
+        }
+
+        .hero-nav-next-text,
+        .hero-nav-prev-text {
+            @apply text-sm;
+        }
+
+        .hero-heading:nth-of-type(1) {
+            @apply text-[2rem] leading-[1];
+        }
+
+        .hero-border-top,
+        .hero-border-right,
+        .hero-border-bottom,
+        .hero-border-left {
+            @apply h-[5px] w-[5px];
+        }
+    }
+
+    /* Adjust layout for very small screens */
+    @media (max-width: 374px) {
+        .hero-text-container {
+            @apply w-[85%] top-[30%];
+        }
+
+        .hero-controls {
+            @apply w-[50%] top-[70%];
+        }
+
+        .hero-nav-container {
+            @apply w-[6rem] h-[6rem];
+        }
+
+        .hero-pagination {
+            @apply w-[80%];
+        }
+
+        .hero-pagination-line {
+            @apply w-[60%];
+        }
+    }
+}
