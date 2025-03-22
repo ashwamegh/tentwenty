@@ -1,8 +1,12 @@
 {
-    "name": "my-app",
+    "name": "tentwenty",
     "private": true,
     "version": "0.0.0",
     "type": "module",
+    "author": {
+        "name": "Shashank Shekhar",
+        "email": "shashank7200@gmail.com"
+    },
     "scripts": {
         "dev": "vite",
         "build": "vite build",
