@@ -71,7 +71,7 @@
     }
 
     .hero-nav-next-bg {
-        @apply relative w-full h-full bg-[url('./../../assets/images/people-group.png')] bg-[100%_100%];
+        @apply relative w-full h-full bg-[url('./../../assets/images/farm-2.jpeg')] bg-[100%_100%];
     }
 
     .hero-nav-next-text {
