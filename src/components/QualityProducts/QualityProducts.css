@@ -3,7 +3,7 @@
 @layer components {
     /* Quality Products Component */
     .quality-section {
-        @apply w-full h-screen max-w-full mx-auto bg-white relative pt-10 overflow-hidden;
+        @apply w-full min-h-screen max-w-full mx-auto bg-white relative pt-10 pb-20 overflow-hidden;
     }
 
     .quality-title {
@@ -14,28 +14,139 @@
         @apply text-center text-[#7a7777] text-xl max-w-[748px] mx-auto mb-16;
     }
 
+    .quality-gallery-container {
+        @apply relative w-full h-[90vh] overflow-hidden mb-8;
+        perspective: 1200px;
+    }
+
+    /* Mobile responsive styles */
+    @media (max-width: 768px) {
+        .quality-gallery-container {
+            @apply h-[55vh];
+        }
+
+        .quality-title {
+            @apply text-4xl leading-[56px];
+        }
+
+        .quality-description {
+            @apply text-lg px-4;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .quality-gallery-container {
+            @apply h-[45vh];
+        }
+
+        .quality-title {
+            @apply text-3xl leading-[48px];
+        }
+    }
+
     .quality-gallery {
-        @apply relative w-full h-[65vh] flex justify-center items-center mb-8 overflow-visible;
+        @apply relative w-full h-full flex justify-center items-center;
+        touch-action: pan-x;
+        transform-style: preserve-3d;
     }
 
     .gallery-image-left {
-        @apply absolute mt-28 -left-28 -rotate-[9.55deg] z-10 transition-all duration-500;
+        @apply absolute mt-28 -left-28 -rotate-[9.55deg] z-20 transition-all duration-500;
     }
 
     .gallery-image-center {
-        @apply relative z-20 transition-all duration-500;
+        @apply relative z-30 transition-all duration-500;
     }
 
     .gallery-image-right {
-        @apply absolute mt-28 -right-28 rotate-[9.55deg] z-10 transition-all duration-500;
+        @apply absolute mt-28 -right-28 rotate-[9.55deg] z-20 transition-all duration-500;
     }
 
     .gallery-image-hidden {
         @apply absolute opacity-0 scale-75 z-0 pointer-events-none;
     }
 
+    /* Far left and far right images are now hidden and use gallery-image-hidden class */
+
     .gallery-image {
-        @apply h-[60vh] object-cover w-[400px] shadow-lg rounded-sm;
+        @apply h-[60vh] object-cover shadow-lg rounded-sm;
+        width: 400px;
+    }
+
+    @media (max-width: 1024px) {
+        .gallery-image {
+            height: 60vh;
+            width: 300px;
+        }
+
+        .gallery-image-left {
+            @apply -left-20 translate-x-[-15%];
+        }
+
+        .gallery-image-right {
+            @apply -right-20 translate-x-[15%];
+        }
+    }
+
+    @media (max-width: 768px) {
+        .gallery-image {
+            height: 60vh;
+            width: 300px;
+        }
+
+        .gallery-image-left {
+            @apply -left-20 translate-x-[-33%];
+        }
+
+        .gallery-image-right {
+            @apply -right-20 translate-x-[33%];
+        }
+    }
+
+    @media (max-width: 576px) {
+        .gallery-image {
+            height: 50vh;
+            width: 300px;
+        }
+
+        .gallery-image-left {
+            @apply -left-28;
+        }
+
+        .gallery-image-right {
+            @apply -right-28;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .gallery-image {
+            height: 40vh;
+            width: 250px;
+        }
+
+        .gallery-image-left {
+            @apply -left-16;
+        }
+
+        .gallery-image-right {
+            @apply -right-16;
+        }
+
+        .drag-button {
+            @apply w-[80px] h-[80px];
+        }
+
+        .drag-text {
+            @apply text-base;
+        }
+    }
+
+    .gallery-item {
+        @apply absolute transition-all duration-500 ease-out;
+        will-change: transform, opacity;
+        transform-style: preserve-3d;
+        backface-visibility: hidden;
+        transform-origin: center center;
     }
 
     .drag-button {
@@ -59,14 +170,49 @@
     }
 
     .client-info {
-        @apply text-center mt-8;
+        @apply text-center mt-8 mb-12 block w-full;
     }
 
     .client-name {
-        @apply text-2xl font-semibold mb-1;
+        @apply text-3xl font-semibold mb-2;
     }
 
     .client-location {
-        @apply text-gray-500;
+        @apply text-xl text-gray-500;
+    }
+
+    /* Responsive text sizes for client info */
+    @media (max-width: 1024px) {
+        .client-name {
+            @apply text-2xl mb-1;
+        }
+
+        .client-location {
+            @apply text-lg;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .client-info {
+            @apply mt-6 mb-8;
+        }
+
+        .client-name {
+            @apply text-xl;
+        }
+
+        .client-location {
+            @apply text-base;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .client-name {
+            @apply text-lg;
+        }
+
+        .client-location {
+            @apply text-sm;
+        }
     }
 }
