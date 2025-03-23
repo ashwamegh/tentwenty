@@ -2,7 +2,9 @@
 import React, { useState, useEffect } from 'react';
 // eslint-disable-next-line no-unused-vars
 import { AnimatePresence, motion } from 'motion/react';
+
 import './Header.css';
+import ArrowRight from './../../assets/icons/arrow-right.svg';
 
 function Header() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -41,10 +43,11 @@ function Header() {
         <header className="header-container">
             <div className="header-inner">
                 {/* Logo on desktop, Contact Us on mobile */}
-                {!isMobile ? (
-                    <div className="header-logo">TenTwenty</div>
-                ) : (
-                    <button className="contact-button mobile-header-contact">Contact Us</button>
+                {isMobile && (
+                    <button className="contact-button mobile-header-contact">
+                        <span>Contact Us</span>
+                        <img className="contact-button-icon" src={ArrowRight} alt="Arrow Right" />
+                    </button>
                 )}
 
                 {/* Desktop Navigation */}
@@ -59,7 +62,12 @@ function Header() {
                 )}
 
                 {/* Contact Button - visible on desktop */}
-                {!isMobile && <button className="contact-button">Contact Us</button>}
+                {!isMobile && (
+                    <button className="contact-button">
+                        <span>Contact Us</span>
+                        <img className="contact-button-icon" src={ArrowRight} alt="Arrow Right" />
+                    </button>
+                )}
 
                 {/* Hamburger Menu - visible on mobile */}
                 {isMobile && (

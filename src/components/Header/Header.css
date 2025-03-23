@@ -7,7 +7,7 @@
     }
 
     .header-inner {
-        @apply text-sm leading-snug text-black mt-5 h-[101px] p-[40px] z-10 bg-white flex items-center justify-between relative;
+        @apply text-sm leading-snug text-black mt-5 h-[100px] p-[40px] z-10 bg-white flex items-center justify-between relative;
     }
 
     /* Logo */
@@ -34,7 +34,11 @@
     }
 
     .contact-button {
-        @apply whitespace-nowrap border border-black p-4 py-2 hover:bg-black hover:text-white transition-colors;
+        @apply whitespace-nowrap flex gap-3 items-center border border-black p-4 py-2 hover:bg-black hover:text-white transition-colors;
+    }
+
+    .contact-button-icon {
+        @apply w-4;
     }
 
     /* Hamburger Menu */
@@ -86,9 +90,9 @@
     /* Mobile view */
     @media (max-width: 767px) {
         .header-inner {
-            @apply mx-0 my-0 px-4;
+            @apply mx-0 my-0 px-4 h-[80px];
         }
-        
+
         .mobile-header-contact {
             @apply text-sm py-1 px-3;
         }
