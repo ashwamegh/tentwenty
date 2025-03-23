@@ -101,7 +101,7 @@ export const HeroSection = () => {
                             initial={{ height: 0 }}
                             animate={{ height: '100%' }}
                             transition={{
-                                duration: 4,
+                                duration: 1.5,
                                 ease: 'easeInOut'
                             }}
                         >
@@ -166,7 +166,6 @@ export const HeroSection = () => {
                             >
                                 <div className="hero-heading hero-heading-wrapper">
                                     <div className="hero-heading-row">
-
                                         {['From', 'Our', 'Farms'].map((word, index) => (
                                             <motion.span
                                                 key={`heading1-${word}-${animationKey}`}
